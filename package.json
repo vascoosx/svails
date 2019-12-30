@@ -1,0 +1,27 @@
+{
+  "name": "svails",
+  "version": "1.0.0",
+  "description": "svelte on rails",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "cd svelte_js && rollup -c",
+    "postinstall": "cd svelte_js && npm i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vascoosx/svails.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vascoosx/svails/issues"
+  },
+  "homepage": "https://github.com/vascoosx/svails#readme",
+  "dependencies": {
+    "svelte-app": "file:svelte_js"
+  }
+}
