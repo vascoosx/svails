@@ -4,6 +4,16 @@ const md5 = require("md5");
 const path = require("path");
 
 let files = glob.sync("svelte_js/public/build/*.{js,css}");
+let maps = glob.sync("svelte_js/public/build/*.js.map");
+maps.map(p => {
+  let sourceMap = JSON.parse(fs.readFileSync(p));
+  sourceMap.sources = sourceMap.sources.map(s => {
+    return s.replace("../../", "../../svelte_js/")
+  })
+  const fname = path.basename(p);
+  fs.writeFileSync(`public/packs/${fname}`, JSON.stringify(sourceMap));
+});
+
 const manifest = files.map(p => {
   const extension = p.endsWith(".js") ? ".js" : ".css"
   const pathMd5 = `-${md5(fs.readFileSync(p))}${extension}`;
