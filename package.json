@@ -6,7 +6,7 @@
     "bin": "vendor/svails"
   },
   "scripts": {
-    "build": "cd svelte_js && rollup -c",
+    "build": "cd svelte_js && npx rollup -c",
     "postinstall": "cd svelte_js && npm ci",
     "manifest": "node vendor/svails/make_manifest.js"
   },
