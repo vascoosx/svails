@@ -4,6 +4,8 @@ require_relative 'boot'
 
 require 'rails/all'
 
+require 'external_asset_pipeline/railtie'
+
 Bundler.require(*Rails.groups)
 
 module Svails
@@ -15,5 +17,6 @@ module Svails
     config.npm.watch = ['cd svelte_js && rollup -c -w']
 
     config.npm.install_on_rails_server = false
+    config.external_asset_pipeline.fall_back_to_sprockets = true
   end
 end

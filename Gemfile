@@ -15,6 +15,7 @@ gem 'sass-rails', '>= 6'
 # for svelte
 gem 'npm-pipeline-rails', github: 'vascoosx/npm-pipeline-rails'
 gem 'sprockets', '~> 4.0'
+gem 'external_asset_pipeline'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

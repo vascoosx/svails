@@ -2,14 +2,13 @@
   "name": "svails",
   "version": "1.0.0",
   "description": "svelte on rails",
-  "main": "index.js",
   "directories": {
-    "lib": "lib",
-    "test": "test"
+    "bin": "vendor/svails"
   },
   "scripts": {
     "build": "cd svelte_js && rollup -c",
-    "postinstall": "cd svelte_js && npm i"
+    "postinstall": "cd svelte_js && npm ci",
+    "manifest": "node vendor/svails/make_manifest.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +20,7 @@
     "url": "https://github.com/vascoosx/svails/issues"
   },
   "homepage": "https://github.com/vascoosx/svails#readme",
-  "dependencies": {
-    "svelte-app": "file:svelte_js"
+  "devDependencies": {
+    "md5": "^2.2.1"
   }
 }
