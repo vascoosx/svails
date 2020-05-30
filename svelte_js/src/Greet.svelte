@@ -5,6 +5,9 @@
 <main>
 	<h1>Hello {name}!</h1>
 	<p>
+		This is component Greet
+	</p>
+	<p>
 		To add another component just export it in main.js!
 	</p>
 	<p>

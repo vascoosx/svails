@@ -1,3 +1,3 @@
-import App from './App.svelte';
+import Greet from './Greet.svelte';
 
-export {App};
+export {Greet};

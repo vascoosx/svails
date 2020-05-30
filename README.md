@@ -6,8 +6,6 @@
  bundle install
  npm i
  npm run build
- npm run manifest
  rails db:create
- rails db:migrate
  rails s
 ```
