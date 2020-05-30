@@ -60,4 +60,5 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.external_asset_pipeline.cache_manifest = false
+  config.external_asset_pipeline.dev_server.enabled = false
 end

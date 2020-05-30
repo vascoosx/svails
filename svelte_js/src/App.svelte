@@ -7,6 +7,9 @@
 	<p>
 		To add another component just export it in main.js!
 	</p>
+	<p>
+		Just make some changes and refresh to see your update!
+	</p>
 </main>
 
 <style>

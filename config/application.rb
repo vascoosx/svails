@@ -14,7 +14,7 @@ module Svails
 
     config.npm.install = ['npm install']
     config.npm.build = ['npm run build']
-    config.npm.watch = ['cd svelte_js && rollup -c -w']
+    config.npm.watch = ['npm run watch', 'cd svelte_js && npm run dev']
 
     config.npm.install_on_rails_server = false
     config.external_asset_pipeline.fall_back_to_sprockets = true
