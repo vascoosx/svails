@@ -8,7 +8,8 @@
   "scripts": {
     "build": "cd svelte_js && npx rollup -c",
     "postinstall": "cd svelte_js && npm ci",
-    "manifest": "node vendor/svails/make_manifest.js"
+    "manifest": "node vendor/svails/make_manifest.js",
+    "watch": "onchange 'svelte_js/public/build' -- npm run manifest"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/vascoosx/svails#readme",
   "devDependencies": {
-    "md5": "^2.2.1"
+    "md5": "^2.2.1",
+    "onchange": "^7.0.2"
   }
 }
