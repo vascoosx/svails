@@ -3,6 +3,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import copy from 'rollup-plugin-copy';
+import md5File from 'md5-file';
+import path from 'path';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -35,6 +38,28 @@ export default {
 			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
 		}),
 		commonjs(),
+		copy({
+			targets: [
+				'public/build/bundle.js',
+				'public/build/bundle.js.map',
+				'public/build/bundle.css',
+				'public/build/bundle.css.map'
+			].map(x => {
+				let parsedPath = path.parse(x);
+				let hash = md5File.sync(x);
+				let name = parsedPath.ext === '.map' ?
+				  path.parse(parsedPath.name).name :
+					parsedPath.name
+				let ext = parsedPath.ext === '.map' ?
+					path.parse(parsedPath.name).ext + '.map' :
+					parsedPath.ext
+				return {
+					src: x,
+					dest: '../public/packs',
+					rename: `${name}-${hash}${ext}`
+				}
+			})
+		}),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated

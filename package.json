@@ -23,6 +23,7 @@
   "homepage": "https://github.com/vascoosx/svails#readme",
   "devDependencies": {
     "md5": "^2.2.1",
+    "md5-file": "^5.0.0",
     "onchange": "^7.0.2"
   }
 }
